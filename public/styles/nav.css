@@ -1,12 +1,15 @@
 /* #4056A1 */
 nav {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #3E54A2;
+  background-color: #4056a1;
+  background-image: url(../images/fabric-background.png);
   height: 120px; 
   width: 100vw;
   color: #FFF;
+  z-index: 1;
  }
 
 #main-logo {
