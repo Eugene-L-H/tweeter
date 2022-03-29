@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -51,13 +52,19 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident minima culpa officia obcaecati velit vero iure ex omnis et modi corrupti sed veniam fugit ea neque, necessitatibus qui a in.
-      Adipisci ex impedit unde, dolorem assumenda alias ratione neque veritatis veniam, ut facilis saepe nihil nam non perspiciatis quam possimus. Voluptates animi similique vitae deleniti quisquam nesciunt, reprehenderit asperiores. Odio?
-      Aliquid doloribus iure quasi, fuga expedita cumque rerum non delectus aliquam. Vitae deserunt veniam rem, hic natus esse sint nostrum a veritatis repellat nobis, aliquid consectetur doloribus sunt illo porro?
-      Quaerat natus suscipit quis impedit accusamus perspiciatis ullam cumque perferendis doloribus, hic id voluptas corrupti fugiat repellendus saepe nihil iure eius nesciunt maiores vel nulla placeat ipsam ratione molestias. Eligendi?
-      Sit blanditiis eius omnis earum? Repellat distinctio temporibus ad ducimus dolore, quos beatae voluptatem doloremque blanditiis error corporis minima placeat repudiandae esse, maxime illum. Voluptatum ipsum quasi mollitia. Ipsa, quod!
-      Dicta harum voluptatem beatae voluptas eligendi culpa quis asperiores. Qui provident doloremque ullam quas voluptatum at sint molestias aut quae repellendus. Officia minima magnam similique quod laudantium consectetur reprehenderit eos!
-      Saepe vero accusantium quia ut architecto cum eaque quaerat officia exercitationem doloremque doloribus impedit fugit mollitia culpa ipsam explicabo assumenda, earum consequatur dicta quam amet, voluptatem reprehenderit alias! Voluptas, ducimus.</p>
+      <section class="new-tweet">
+        <div class="new-tweet_container">
+          <h2>Compose Tweet</h2>
+          <form action="/tweets/" method="POST">
+            <!-- <label for="tweet-text">What are you humming about?</label> -->
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <div class="submit-section">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
   </body>
 </html>

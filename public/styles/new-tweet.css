@@ -1,0 +1,50 @@
+.new_tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-tweet_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.new-tweet_container form {
+  display: flex:
+  flex-directon: column;
+  width: 95%;
+}
+
+.new-tweet_container textarea {
+  font-weight: 600;
+  width: 100%;
+  color: #57534B;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 4px solid #57534B;
+  background-color: #f4f1ec;
+  resize: none;
+}
+
+.submit-section {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+.submit-section button {
+  color: #FFF;
+  background-color: #4056a1;
+  /* border: 0; */
+  margin-top: 10px;
+
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
