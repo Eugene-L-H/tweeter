@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   let chars = 140;
 
-  $tweetText.change(() => {
+  $tweetText.keyup(() => {
     let tweetValue = $tweetText.val();
     let tweetLength = tweetValue.length;
 
