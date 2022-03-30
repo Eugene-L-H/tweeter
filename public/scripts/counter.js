@@ -8,7 +8,13 @@ $(document).ready(function() {
     let tweetValue = $tweetText.val();
     let tweetLength = tweetValue.length;
 
-    $counter.text(chars - tweetLength); 
+    if (tweetLength > 140) {
+      $counter.css('color', 'red');
+    } else {
+      $counter.css('color', 'black');
+    }
+    
+    $counter.text(chars - tweetLength);
   });
 });
 

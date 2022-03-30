@@ -1,8 +1,8 @@
-.new_tweet {
+.new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-bottom: 25px;
 }
 
 .new-tweet_container {
