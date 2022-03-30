@@ -3,19 +3,42 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// tweet should be an article
-// header and footer should be included
-// add lorem to body
-const generateTweet = function(data) {
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
+
+const createTweetElement = function(tweetObj) {
   // construct header with name and handle inside
-  const tweetContent = 'This will be replaced with dynamic data.';
-  const userName = 'Fist Last';
-  const userHandle = `@${userName}`;
-  const postDate = '0 days ago';
+  console.log('tweetObj.content in createTweet: ', tweetObj.content);
+  const tweetContent = tweetObj.content.text;
+  const userName = tweetObj.user.name;
+  const userHandle = tweetObj.user.handle;
+  const postDate = tweetObj.created_at;
   
   // middle section that displays the value from tweet text b ox
   // footer with age of tweet diplayed along with icons.
-  const tweet = `
+  const tweetMarkup = `
   <article>
     <header class='tweet'>
       <h3>${userName}</h3>
@@ -34,7 +57,18 @@ const generateTweet = function(data) {
     </footer>
   </article>
   `;
-  return tweet;
+  console.log('Tweet to post: ', tweetMarkup)
+  return tweetMarkup;
+}
+
+const renderTweets = function(tweets, container) {
+  console.log('tweet in renderTweets: ', tweets);
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+  for (let tweet of tweets) {
+    container.append(createTweetElement(tweet));
+  }
 }
 
 // jQuery
@@ -43,9 +77,12 @@ $(document).ready(function() {
   const $tweetContainer = $('#tweet-container');
   const $tweetButton = $('.submit-section button');
 
+  // Populate main area with tweets
+  renderTweets(data, $tweetContainer);
+
   // listen for submit from the tweet button
   $tweetButton.on('click', (e) => {
-    $tweetContainer.append(generateTweet());
+    $tweetContainer.append(createTweetElement());
   });
 
 
