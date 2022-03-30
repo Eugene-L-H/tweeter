@@ -29,15 +29,13 @@ const data = [
 ]
 
 const createTweetElement = function(tweetObj) {
-  // construct header with name and handle inside
-  console.log('tweetObj.content in createTweet: ', tweetObj.content);
+  // Returns custom HTML markup for each tweet
   const tweetContent = tweetObj.content.text;
   const userName = tweetObj.user.name;
   const userHandle = tweetObj.user.handle;
   const postDate = tweetObj.created_at;
-  
-  // middle section that displays the value from tweet text b ox
-  // footer with age of tweet diplayed along with icons.
+
+
   const tweetMarkup = `
   <article>
     <header class='tweet'>
@@ -57,7 +55,7 @@ const createTweetElement = function(tweetObj) {
     </footer>
   </article>
   `;
-  console.log('Tweet to post: ', tweetMarkup)
+
   return tweetMarkup;
 }
 
@@ -76,6 +74,8 @@ const renderTweets = function(tweets, container) {
 $(document).ready(function() {
   const $tweetContainer = $('#tweet-container');
   const $tweetButton = $('.submit-section button');
+  const $submitTweetForm = $('.new-tweet_container form');
+  // console.log('FORM: ', $submitTweetForm);
 
   // Populate main area with tweets
   renderTweets(data, $tweetContainer);
@@ -85,6 +85,13 @@ $(document).ready(function() {
     $tweetContainer.append(createTweetElement());
   });
 
+  $submitTweetForm.submit((e) => {
+    alert( "Handler for .submit() called." );
+    e.preventDefault();
+  });
 
+  // add an event listener that listens for the submit event
+  // prevent the default behaviour of the submit event (data submission and page refresh)
+  // create an AJAX POST request in client.js that sends the form data to the server.
 
 });
