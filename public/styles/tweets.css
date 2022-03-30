@@ -5,16 +5,16 @@
   width: 100%;
 }
 
+#tweet-container article:hover {
+  box-shadow: 0.1em 0.1em 0.1em 0.1em #4056a1;
+}
+
 #tweet-container article {
   display: flex;
   flex-direction: column;
   width: 50%;
   height: 200px;
   border: 3px solid #57534B;
-}
-
-#tweet-container article {
-  box-shadow: 5px 10px #888888:
 }
 
 #tweet-container header {
