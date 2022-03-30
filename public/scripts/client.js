@@ -17,17 +17,20 @@ const generateTweet = function(data) {
   // footer with age of tweet diplayed along with icons.
   const tweet = `
   <article>
-    <header>
-      <div class='content'>
-        <h3>${userName}</h3>
-        <h3 class='user-handle'>${userHandle}</h3>
-      </div>
+    <header class='tweet'>
+      <h3>${userName}</h3>
+      <h3 class='user-handle'>${userHandle}</h3>
     </header>
-    <main>
+    <main class='tweet'>
       ${tweetContent}
     </main>
-    <footer>
+    <footer class='tweet'>
       <span>${postDate}</span>
+      <div class="icons">
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+      </div>
     </footer>
   </article>
   `;

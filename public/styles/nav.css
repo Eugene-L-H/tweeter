@@ -1,6 +1,7 @@
 /* #4056A1 */
 nav {
-  /* position: fixed; */
+  top: 0;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +12,11 @@ nav {
   color: #FFF;
   z-index: 1;
  }
+
+ .fa-angles-down {
+  color: red;
+  align-self: center;
+}
 
 #main-logo {
   font-family: 'Bungee', cursive;

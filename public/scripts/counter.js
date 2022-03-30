@@ -11,9 +11,9 @@ $(document).ready(function() {
     if (tweetLength > 140) {
       $counter.css('color', 'red');
     } else {
-      $counter.css('color', 'black');
+      $counter.css('color', '#57534B');
     }
-    
+
     $counter.text(chars - tweetLength);
   });
 });
