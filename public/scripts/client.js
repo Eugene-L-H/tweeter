@@ -69,11 +69,22 @@ $(document).ready(function() {
       .catch((error) => console.log(error));
   };
 
+  // Clicking on "Write a new tweet" area toggles tweet form
+  const $toggle = $('.write-new_tweet');
+  const $tweetForm = $('.new-tweet_container');
+  const $textArea = $('#tweet-text'); // where user text is entered
+
+  // $tweetForm.toggle(0); // hide new tweet form initially
+  $toggle.click(function () {
+    $tweetForm.toggle(800);
+    $textArea.focus();
+    $textArea.val("");
+  });
+
   // Fetch tweets and populate main area
   loadTweets();
-
+  
   // add an event listener that listens for the submit event
-  // prevent the default behaviour of the submit event (data submission and page refresh)
   $('#tweet-form').submit((event) => {
     // Prevent page refresh on submit
     event.preventDefault();
@@ -82,7 +93,6 @@ $(document).ready(function() {
     const AJAXtext = $('#tweet-form').serialize();
     
     const $errorBox = $(".error-box").text('').slideUp();
-    const $textArea = $('#tweet-text'); // where user text is entered
     const $tweetText = $textArea.val();
 
     if ($tweetText.length > 140) {
