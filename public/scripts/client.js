@@ -40,7 +40,10 @@ $(document).ready(function() {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
-    for (let tweet of tweets) {
+    $(container).empty();
+    const newTweetsFirst = tweets.reverse();
+    console.log('newTweetsFirst: ', newTweetsFirst)
+    for (let tweet of newTweetsFirst) {
       container.append(createTweetElement(tweet));
     }
   }
@@ -82,6 +85,7 @@ $(document).ready(function() {
       // Clear new tweet text area.
       $('#tweet-text').val('');
       // renderTweets(data, $tweetContainer);
+      loadTweets();
     })
     .catch((error) => {
       console.log("Error :", error);
