@@ -65,6 +65,16 @@ $(document).ready(function() {
     // Serialize tweet to be read by AJAX
     const AJAXtext = $('#tweet-form').serialize();
     
+    const tweetText = $('#tweet-text').val();
+    console.log('TWEET text: ', tweetText);
+    if (tweetText.length > 140) {
+      alert('TWEET TOO LONG.');
+      return $('#tweet-text').val(tweetText);
+    } else if (tweetText === '') {
+      alert('THAT IS AN EMPTY TWEET.');
+      return $('#tweet-text').val(tweetText);
+    }
+
     console.log('AJAXtext: ', AJAXtext);
     
     $.ajax({ url: '/tweets', method: 'POST', data: AJAXtext })
