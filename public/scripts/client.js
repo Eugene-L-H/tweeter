@@ -4,37 +4,13 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 $(document).ready(function() {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
 
   const createTweetElement = function(tweetObj) {
     // Returns custom HTML markup for each tweet
     const tweetContent = tweetObj.content.text;
     const userName = tweetObj.user.name;
     const userHandle = tweetObj.user.handle;
-    const postDate = tweetObj.created_at;
+    const postDate = timeago.format(tweetObj.created_at);
 
 
     const tweetMarkup = `
@@ -77,6 +53,9 @@ $(document).ready(function() {
       .catch((error) => console.log(error));
   };
 
+  // Fetch tweets and populate main area
+  loadTweets();
+
   // add an event listener that listens for the submit event
   // prevent the default behaviour of the submit event (data submission and page refresh)
   $('#tweet-form').submit((event) => {
@@ -84,7 +63,7 @@ $(document).ready(function() {
     event.preventDefault();
     
     // Serialize tweet to be read by AJAX
-    const AJAXtext = $(this).serialize();
+    const AJAXtext = $('#tweet-form').serialize();
     
     console.log('AJAXtext: ', AJAXtext);
     
