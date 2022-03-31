@@ -114,6 +114,7 @@ $(document).ready(function() {
       $('#tweet-text').val('');
       // renderTweets(data, $tweetContainer);
       loadTweets();
+      $('.counter').val(140);
     })
     .catch((error) => {
       console.log("Error :", error);

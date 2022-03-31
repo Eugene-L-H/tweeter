@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5em 0;
 }
 
 .new-tweet_container {
@@ -15,8 +14,6 @@
 
 .error-box {
   color: #F00;
-  /* background-color: #FDE4E4;
-  border: 1px solid #FEC7C8; */
   font-size: 0.7em;
   font-weight: bold;
   padding: 0.7em;
@@ -27,6 +24,7 @@
   display: flex:
   flex-directon: column;
   width: 95%;
+  margin-top: 3rem;
 }
 
 .new-tweet_container textarea {
