@@ -13,6 +13,16 @@
   margin: 0 auto;
 }
 
+.error-box {
+  color: #F00;
+  /* background-color: #FDE4E4;
+  border: 1px solid #FEC7C8; */
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 0.7em;
+
+}
+
 .new-tweet_container form {
   display: flex:
   flex-directon: column;
@@ -41,7 +51,6 @@
 .submit-section button {
   color: #FFF;
   background-color: #4056a1;
-  /* border: 0; */
   margin-top: 10px;
 
 }

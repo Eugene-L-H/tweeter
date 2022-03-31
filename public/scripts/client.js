@@ -5,6 +5,19 @@
 */
 $(document).ready(function() {
 
+  const escapeHTML = str =>
+  str.replace(
+    /[&<>'"]/g,
+    tag =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+  );
+
   const createTweetElement = function(tweetObj) {
     // Returns custom HTML markup for each tweet
     const tweetContent = tweetObj.content.text;
@@ -16,14 +29,14 @@ $(document).ready(function() {
     const tweetMarkup = `
     <article>
       <header class='tweet'>
-        <h3 class='user-name'>${userName}</h3>
-        <h3 class='user-handle'>${userHandle}</h3>
+        <h3 class='user-name'>${escapeHTML(userName)}</h3>
+        <h3 class='user-handle'>${escapeHTML(userHandle)}</h3>
       </header>
       <main class='tweet'>
-        ${tweetContent}
+        ${escapeHTML(tweetContent)}
       </main>
       <footer class='tweet'>
-        <span>${postDate}</span>
+        <span>${escapeHTML(postDate)}</span>
         <div class="icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -68,14 +81,19 @@ $(document).ready(function() {
     // Serialize tweet to be read by AJAX
     const AJAXtext = $('#tweet-form').serialize();
     
-    const tweetText = $('#tweet-text').val();
-    console.log('TWEET text: ', tweetText);
-    if (tweetText.length > 140) {
-      alert('TWEET TOO LONG.');
-      return $('#tweet-text').val(tweetText);
-    } else if (tweetText === '') {
-      alert('THAT IS AN EMPTY TWEET.');
-      return $('#tweet-text').val(tweetText);
+    const $errorBox = $(".error-box").text('').slideUp();
+    const $textArea = $('#tweet-text'); // where user text is entered
+    const $tweetText = $textArea.val();
+
+    if ($tweetText.length > 140) {
+      return $errorBox
+        .slideDown()
+        .text('⚠ Tweet is too long, streamline your thoughts. Less is more ⚠');
+    } else if ($tweetText === '') {
+      return $errorBox
+      .slideDown()
+      .text('⚠ That is an empty tweet ⚠');
+      // return $textArea.val($tweetText);
     }
 
     console.log('AJAXtext: ', AJAXtext);
