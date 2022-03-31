@@ -1,10 +1,10 @@
 $(document).ready(function() {
+  
+  let max = 140;
   const $counter = $('.counter');
   const $tweetText = $('#tweet-text');
 
-  let chars = 140;
-
-  $tweetText.keyup(() => {
+  $tweetText.on('input', () => {
     let tweetValue = $tweetText.val();
     let tweetLength = tweetValue.length;
 
@@ -14,7 +14,6 @@ $(document).ready(function() {
       $counter.css('color', '#57534B');
     }
 
-    $counter.text(chars - tweetLength);
+    $counter.text(max - tweetLength);
   });
 });
-

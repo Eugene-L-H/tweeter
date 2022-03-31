@@ -27,12 +27,11 @@
   height: 30%;
   font-size: 1em;
 }
-
-#tweet-container header :nth-child(1) {
+h3.user-name {
   margin-left: 15px;
 }
 
-#tweet-container header :nth-child(2) {
+h3.user-handle {
   margin-right: 15px;
 }
 
