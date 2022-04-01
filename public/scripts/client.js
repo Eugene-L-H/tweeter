@@ -30,9 +30,9 @@ $(document).ready(function() {
     <article>
       <header class='tweet'>
         <div>
-          <img src="${escapeHTML(
+          <img src='${escapeHTML(
             tweetObj.user.avatars
-          )}" alt="user avatar" class="info-pic"/>
+          )}' alt="user avatar" class="info-pic"/>
           <h3 class='user-name'>${escapeHTML(userName)}</h3>
         </div>
         <h3 class='user-handle'>${escapeHTML(userHandle)}</h3>
@@ -109,13 +109,12 @@ $(document).ready(function() {
       .text('⚠ That is an empty tweet ⚠');
       // return $textArea.val($tweetText);
     }
-
-    console.log('AJAXtext: ', AJAXtext);
     
     $.ajax({ url: '/tweets', method: 'POST', data: AJAXtext })
     .then(() => {
       // Clear new tweet text area.
       $('#tweet-text').val('');
+
       // renderTweets(data, $tweetContainer);
       loadTweets();
       $('.counter').val(140);

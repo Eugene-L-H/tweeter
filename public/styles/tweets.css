@@ -26,7 +26,8 @@ header.tweet {
   flex-directon: row;
   justify-content: space-between;
   height: 30%;
-  font-size: 1em;
+  font-weight: 600;
+  color: #57534B;
 }
 
 header.tweet div {
@@ -47,13 +48,15 @@ h3.user-handle {
   min-height: 40%;
   padding-bottom: 8px;
   border-bottom: 4px solid #57534B;
-  margin: 1em auto 0.5em auto;
+  margin: 1em auto 0 auto;
   font-size: 0.90em;
 }
 
 #tweet-container footer {
   display: flex;
   justify-content: space-between;
+  color: #57534B;
+  margin-top: 0.25em;
 }
 
 #tweet-container footer span {

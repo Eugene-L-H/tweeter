@@ -24,7 +24,7 @@
   display: flex:
   flex-directon: column;
   width: 95%;
-  margin-top: 3rem;
+  margin-top: 3em;
 }
 
 .new-tweet_container textarea {
@@ -50,7 +50,6 @@
   color: #FFF;
   background-color: #4056a1;
   margin-top: 10px;
-
 }
 
 .counter {
