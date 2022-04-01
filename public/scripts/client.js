@@ -29,7 +29,12 @@ $(document).ready(function() {
     const tweetMarkup = `
     <article>
       <header class='tweet'>
-        <h3 class='user-name'>${escapeHTML(userName)}</h3>
+        <div>
+          <img src="${escapeHTML(
+            tweetObj.user.avatars
+          )}" alt="user avatar" class="info-pic"/>
+          <h3 class='user-name'>${escapeHTML(userName)}</h3>
+        </div>
         <h3 class='user-handle'>${escapeHTML(userHandle)}</h3>
       </header>
       <main class='tweet'>
@@ -55,7 +60,6 @@ $(document).ready(function() {
     // takes return value and appends it to the tweets container
     $(container).empty();
     const newTweetsFirst = tweets.reverse();
-    console.log('newTweetsFirst: ', newTweetsFirst)
     for (let tweet of newTweetsFirst) {
       container.append(createTweetElement(tweet));
     }
