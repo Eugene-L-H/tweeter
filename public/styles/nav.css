@@ -18,18 +18,54 @@ nav {
   align-self: center;
 }
 
+@keyframes arrow-move {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 5px;
+  }
+  50% {
+    top: 8px;
+  }
+  75% {
+    top: 5px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.write-new_tweet:hover > .arrow-move {
+  animation-name: arrow-move;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
+.write-new_tweet:hover {
+  cursor: pointer;
+}
+
 #main-logo {
   font-family: 'Bungee', cursive;
   margin-left: 1.5em;
  }
 
- .write-new_tweet {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-right: 1.5em;
- }
+.write-new_tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1.5em;
+}
 
- .bold {
-   font-weight: bold;
- }
+span.bold {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .navbar {
+    background-color: #4056a1;
+  }
+}
+

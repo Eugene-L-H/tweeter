@@ -10,3 +10,13 @@ header.main {
   align-items: center;
   background-color: #B8B8B8;
 }
+
+.header-content h2 {
+  font-weight: 300;
+  font-size: 1.5em;
+  color: #FFF;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  }

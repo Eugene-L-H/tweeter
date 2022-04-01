@@ -76,7 +76,7 @@ $(document).ready(function() {
 
   // $tweetForm.toggle(0); // hide new tweet form initially
   $toggle.click(function () {
-    $tweetForm.toggle(800);
+    $tweetForm.toggle(400);
     $textArea.focus();
     $textArea.val("");
   });

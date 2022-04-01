@@ -8,12 +8,11 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
- * Global layout stuff
- */
+* Global layout stuff
+*/
 
 body {
   display: flex:
@@ -23,6 +22,7 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 main {
@@ -37,3 +37,4 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
