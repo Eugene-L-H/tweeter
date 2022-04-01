@@ -3,7 +3,7 @@
   flex-directon: column;
   flex-wrap: wrap;
   aligin-items: center;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -75,7 +75,7 @@ h3.user-handle {
 
 @media only screen and (min-width: 1024px) {
   #tweet-container {
-    width: 100%;
+    width: 90%;
     margin-right: 10%;
   }
 

@@ -76,13 +76,15 @@ $(document).ready(function() {
   // Clicking on "Write a new tweet" area toggles tweet form
   const $toggle = $('.write-new_tweet');
   const $tweetForm = $('.new-tweet_container');
+  const $arrows = $('#down-arrows');
   const $textArea = $('#tweet-text'); // where user text is entered
 
-  // $tweetForm.toggle(0); // hide new tweet form initially
   $toggle.click(function () {
     $tweetForm.toggle(400);
     $textArea.focus();
-    $textArea.val("");
+    $textArea.val('');
+    $arrows.hide('');
+    $toggle.css('pointer-events', 'none');
   });
 
   // Fetch tweets and populate main area
