@@ -52,7 +52,11 @@ h3.user-handle {
   margin-top: 0.2em;
 }
 
-#tweet-container footer div {
+#tweet-container footer .icons {
   padding-right: 0.5em;
   margin-top: 0.2em;
+}
+
+#tweet-container i:hover {
+  color: #4056A1;
 }
