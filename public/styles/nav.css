@@ -16,6 +16,7 @@ nav {
  .fa-angles-down {
   color: red;
   align-self: center;
+  margin-top: 0.2em;
 }
 
 @keyframes arrow-move {

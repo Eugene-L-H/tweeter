@@ -88,7 +88,7 @@ $(document).ready(function() {
   // Fetch tweets and populate main area
   loadTweets();
   
-  // add an event listener that listens for the submit event
+  // When user clicks "tweet" button
   $('#tweet-form').submit((event) => {
     // Prevent page refresh on submit
     event.preventDefault();
@@ -99,15 +99,15 @@ $(document).ready(function() {
     const $errorBox = $(".error-box").text('').slideUp();
     const $tweetText = $textArea.val();
 
+    // User error messages regarding tweet length
     if ($tweetText.length > 140) {
       return $errorBox
-        .slideDown()
+        .slideDown(200)
         .text('⚠ Tweet is too long, streamline your thoughts. Less is more ⚠');
     } else if ($tweetText === '') {
       return $errorBox
-      .slideDown()
+      .slideDown(200)
       .text('⚠ That is an empty tweet ⚠');
-      // return $textArea.val($tweetText);
     }
     
     $.ajax({ url: '/tweets', method: 'POST', data: AJAXtext })

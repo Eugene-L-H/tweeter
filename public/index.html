@@ -52,33 +52,33 @@
       </div>
     </nav>
 
-    <header class="main">
-      <div class="header-content">
-        <img src="/images/profile-hex.png"> 
-      <br>      
-        <h2><span class="bold">Your</span> Name</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div class="new-tweet_container" style="display: none;">
-          <!-- Display errors -->
-          <div class="error-box"></div>
-          <!-- New tweet creation-->
-          <form id="tweet-form" action="/tweets" method="POST">
-            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-            <div class="submit-section">
-              <button type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
-          </form>
+    <div class="large-screen_grouping">
+      <header class="main">
+        <div class="header-content">
+          <img src="/images/profile-hex.png">
+        <br>
+          <h2><span class="bold">Your</span> Name</h2>
         </div>
-      </section>
-      <section id="tweet-container">
-
-      </section>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class="new-tweet_container" style="display: none;">
+            <!-- Display errors -->
+            <div class="error-box"></div>
+            <!-- New tweet creation-->
+            <form id="tweet-form" action="/tweets" method="POST">
+              <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+              <div class="submit-section">
+                <button type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text">140</output>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section id="tweet-container">
+        </section>
+    </div>
     </main>
   </body>
 </html>

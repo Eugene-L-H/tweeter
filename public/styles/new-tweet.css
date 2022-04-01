@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -17,7 +17,6 @@
   font-size: 0.7em;
   font-weight: bold;
   padding: 0.7em;
-
 }
 
 .new-tweet_container form {
@@ -48,7 +47,7 @@
 
 .submit-section button {
   color: #FFF;
-  background-color: #4056a1;
+  background-color: #4056A1;
   margin-top: 10px;
 }
 
@@ -57,5 +56,15 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  main.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 2em 0 0 0;
+  }
 
+  .new-tweet {
+    width: 90%;
+  }
 }

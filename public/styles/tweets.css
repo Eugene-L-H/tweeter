@@ -3,7 +3,7 @@
   flex-directon: column;
   flex-wrap: wrap;
   aligin-items: center;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -71,4 +71,15 @@ h3.user-handle {
 
 #tweet-container i:hover {
   color: #4056A1;
+}
+
+@media only screen and (min-width: 1024px) {
+  #tweet-container {
+    width: 100%;
+    margin-right: 10%;
+  }
+
+  #tweet-container article {
+    min-width: 740px;
+  }
 }
