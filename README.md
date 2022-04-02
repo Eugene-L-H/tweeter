@@ -22,6 +22,10 @@ Tweeter is a simple, single-page Twitter clone using HTML, CSS, JS, jQuery and A
 
 !["Mobile/Tablet View"](https://github.com/Eugene-L-H/tweeter/blob/master/public/images/mobileview.png)
 
+### Character Counter/XSS Injection
+
+!["Mobile/Tablet View"](https://github.com/Eugene-L-H/tweeter/blob/master/public/images/red-counter.png)
+
 # Features
 
 ### Submit Tweets

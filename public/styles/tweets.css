@@ -50,14 +50,14 @@ h3.user-handle {
   overflow: auto;
   padding-bottom: 8px;
   border-bottom: 4px solid #57534B;
-  margin: 1em auto 0 auto;
+  margin: 1em auto 0.25em auto;
 }
 
 #tweet-container footer {
   display: flex;
   justify-content: space-between;
   color: #57534B;
-  margin-top: 0.25em;
+  /* margin-top: 0.25em; */
 }
 
 #tweet-container footer span {
