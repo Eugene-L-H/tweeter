@@ -1,10 +1,6 @@
-/*
-* Client-side JS logic goes here
-* jQuery is already loaded
-* Reminder: Use (and do all your DOM work in) jQuery's document ready function
-*/
 $(document).ready(function() {
 
+  // Escapes user-entered HTML to protect against XSS injections
   const escapeHTML = str =>
     str.replace(
       /[&<>'"]/g,
@@ -25,7 +21,7 @@ $(document).ready(function() {
     const userHandle = tweetObj.user.handle;
     const postDate = timeago.format(tweetObj.created_at);
 
-
+    // HTML for new tweets
     const tweetMarkup = `
     <article>
       <header class='tweet'>
@@ -55,9 +51,9 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets, container) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+    /* loops through tweets
+    calls createTweetElement for each tweet
+    takes return value and appends it to the tweets container */
     $(container).empty();
     const newTweetsFirst = tweets.reverse();
     for (let tweet of newTweetsFirst) {
@@ -65,7 +61,9 @@ $(document).ready(function() {
     }
   };
 
+
   const loadTweets = function() {
+    // Retrieve tweets from "database" and pass to render function
     $.ajax({url: '/tweets', method: 'GET', datatype: 'json'})
       .then((result) => {
         renderTweets(result, $('#tweet-container'));
@@ -79,11 +77,13 @@ $(document).ready(function() {
   const $arrows = $('#down-arrows');
   const $textArea = $('#tweet-text'); // where user text is entered
 
+  // HTML elements to be manipulated for hiding/revealing new-tweet input
   $toggle.click(function() {
     $tweetForm.toggle(400);
     $textArea.focus();
     $textArea.val('');
     $arrows.hide('');
+
     // Prevent toggle when arrows not visible
     $toggle.css('pointer-events', 'none');
   });
@@ -93,6 +93,7 @@ $(document).ready(function() {
   
   // When user clicks "tweet" button
   $('#tweet-form').submit((event) => {
+
     // Prevent page refresh on submit
     event.preventDefault();
     
@@ -113,13 +114,16 @@ $(document).ready(function() {
         .text('⚠ That is an empty tweet ⚠');
     }
     
+    // Post user's new tweet to "database"
     $.ajax({ url: '/tweets', method: 'POST', data: AJAXtext })
       .then(() => {
-      // Clear new tweet text area.
-        $('#tweet-text').val('');
+        // Clear new tweet text area.
+        $($textArea).val('');
 
-        // renderTweets(data, $tweetContainer);
+        // RenderTweets(data, $tweetContainer);
         loadTweets();
+
+        // Reset character counter on new tweet form
         $('.counter').val(140);
       })
       .catch((error) => {
