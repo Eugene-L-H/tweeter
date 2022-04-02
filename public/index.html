@@ -64,13 +64,13 @@
       <main class="container">
         <section class="new-tweet">
           <div class="new-tweet_container" style="display: none;">
-            <!-- Display errors -->
-            <div class="error-box"></div>
             <!-- New tweet creation-->
             <form id="tweet-form" action="/tweets" method="POST">
               <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
               <div class="submit-section">
                 <button type="submit">Tweet</button>
+                <!-- Display errors -->
+                <div class="error-box"></div>
                 <output name="counter" class="counter" for="tweet-text">140</output>
               </div>
             </form>

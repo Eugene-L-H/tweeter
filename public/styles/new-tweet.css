@@ -17,6 +17,7 @@
   color: #F00;
   font-size: 0.7em;
   font-weight: bold;
+  font-family: sans-serif;
   padding: 0.7em;
 }
 
@@ -30,6 +31,7 @@
 .new-tweet_container textarea {
   font-weight: 600;
   width: 100%;
+  height: 80%;
   color: #57534B;
   border-left: 0;
   border-right: 0;
@@ -55,6 +57,7 @@
 .counter {
   font-family: 'Bungee', cursive;
   color: #57534B;
+  margin-top: 0.3em;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -68,5 +71,6 @@
 
   .new-tweet {
     width: 90%;
+    margin-right: 4em;
   }
 }
