@@ -27,8 +27,8 @@ $(document).ready(function() {
       <header class='tweet'>
         <div>
           <img src='${escapeHTML(
-    tweetObj.user.avatars
-  )}' alt="user avatar" class="info-pic"/>
+            tweetObj.user.avatars
+          )}' alt="user avatar" class="info-pic"/>
           <h3 class='user-name'>${escapeHTML(userName)}</h3>
         </div>
         <h3 class='user-handle'>${escapeHTML(userHandle)}</h3>
