@@ -46,10 +46,11 @@ h3.user-handle {
 
 #tweet-container main {
   min-height: 40%;
+  word-wrap: break-word;
+  overflow: auto;
   padding-bottom: 8px;
   border-bottom: 4px solid #57534B;
   margin: 1em auto 0 auto;
-  font-size: 0.90em;
 }
 
 #tweet-container footer {
