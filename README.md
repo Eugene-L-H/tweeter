@@ -15,3 +15,29 @@ Tweeter is a simple, single-page Twitter clone using HTML, CSS, JS, jQuery and A
 # Final Product
 
 ### Desktop View
+
+!["Desktop View"](https://github.com/Eugene-L-H/tweeter/blob/master/public/images/desktop-view.png)
+
+### Mobile/Tablet View
+
+!["Mobile/Tablet View"](https://github.com/Eugene-L-H/tweeter/blob/master/public/images/mobileview.png)
+
+# Features
+
+### Submit Tweets
+
+!["Submit Tweets"](https://github.com/Eugene-L-H/tweeter/blob/master/public/images/new-tweet.png)
+
+# Dependencies
+
+- Body-Parser
+- Chance
+- Node + Express
+- MD5
+- sass
+
+# Getting Started
+
+- Install all dependencies (using the `npm i` command).
+- Run the development web server using the `npm start` command.
+- Navigate to http://localhost:8080/ to get started!
