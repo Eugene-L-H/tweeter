@@ -26,21 +26,21 @@ $(document).ready(function() {
     <article>
       <header class='tweet'>
         <div>
-          <img src='${escapeHTML(
+          <img src='${
             tweetObj.user.avatars
-          )}' alt="user avatar" class="info-pic"/>
-          <h3 class='user-name'>${escapeHTML(userName)}</h3>
+          }' alt="user avatar" class="info-pic"/>
+          <h3 class='user-name'>${userName}</h3>
         </div>
-        <h3 class='user-handle'>${escapeHTML(userHandle)}</h3>
+        <h3 class='user-handle'>${userHandle}</h3>
       </header>
       <main class='tweet'>
         ${escapeHTML(tweetContent)}
       </main>
       <footer class='tweet'>
-        <span>${escapeHTML(postDate)}</span>
+        <span>${postDate}</span>
         <div class="icons">
           <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-retweet"></i> 
           <i class="fa-solid fa-heart"></i>
         </div>
       </footer>
@@ -50,23 +50,29 @@ $(document).ready(function() {
     return tweetMarkup;
   };
 
-  const renderTweets = function(tweets, container) {
+  const renderTweets = function(tweets, container, lastOnly) {
     /* loops through tweets
     calls createTweetElement for each tweet
     takes return value and appends it to the tweets container */
-    $(container).empty();
-    const newTweetsFirst = tweets.reverse();
-    for (let tweet of newTweetsFirst) {
-      container.append(createTweetElement(tweet));
+    
+    if (lastOnly) {
+      container.prepend(createTweetElement(tweets[tweets.length - 1]));
+    } else {
+
+      $(container).empty();
+      const newTweetsFirst = tweets.reverse();
+      for (let tweet of newTweetsFirst) {
+        container.append(createTweetElement(tweet));
+      }
     }
   };
 
 
-  const loadTweets = function() {
+  const loadTweets = function(lastOnly) {
     // Retrieve tweets from "database" and pass to render function
     $.ajax({url: '/tweets', method: 'GET', datatype: 'json'})
       .then((result) => {
-        renderTweets(result, $('#tweet-container'));
+        renderTweets(result, $('#tweet-container'), lastOnly);
       })
       .catch((error) => console.log(error));
   };
@@ -89,12 +95,11 @@ $(document).ready(function() {
   });
 
   // Fetch tweets and populate main area
-  loadTweets();
+  loadTweets(false);
   
   // When user clicks "tweet" button
   $('#tweet-form').submit((event) => {
 
-    // Prevent page refresh on submit
     event.preventDefault();
     
     // Serialize tweet to be read by AJAX
@@ -121,7 +126,7 @@ $(document).ready(function() {
         $($textArea).val('');
 
         // RenderTweets(data, $tweetContainer);
-        loadTweets();
+        loadTweets(true);
 
         // Reset character counter on new tweet form
         $('.counter').val(140);

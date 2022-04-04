@@ -9,8 +9,8 @@ $(document).ready(function() {
   /* Counter numbers turn red and display a negative value when 
   greater than 140 characters */
   $tweetText.on('input', () => {
-    let tweetValue = $tweetText.val();
-    let tweetLength = tweetValue.length;
+    const tweetValue = $tweetText.val();
+    const tweetLength = tweetValue.length;
 
     if (tweetLength > 140) {
       $counter.css('color', 'red');
